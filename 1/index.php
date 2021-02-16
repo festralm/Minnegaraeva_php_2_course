@@ -76,7 +76,7 @@ for ($i = 0; $i < $code_length; $i++) {
 echo $res."<br>";
 ?>
 <?php else:?>
-<form action="1/index.php">
+<form action="<?php __FILE__?>">
     <textarea name="code" placeholder="Введите код"></textarea>
     <br>
     <input type="text" name="params" placeholder="Введите входные параметры"/>
