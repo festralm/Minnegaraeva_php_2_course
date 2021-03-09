@@ -10,20 +10,16 @@
 
     // Разделить на строки
     $string_arr = explode("\n", $input_strings);
-    // Вывести исходные строки
-    foreach ($string_arr as $str) {
-        echo $str."<br/>";
-    }
-    echo "<br/>";
 
     // Разделить строки на слова
     $word_arr = [];
     $i = 0;
     foreach ($string_arr as $str) {
         $word_arr[$i] = explode(' ', trim($str));
+        $word_arr[$i + 1] = $word_arr[$i];
         // Перемешать слова в каждой строке
-        shuffle($word_arr[$i]);
-        $i++;
+        shuffle($word_arr[$i + 1]);
+        $i += 2;
     }
 
     // Отсортирровать строки по второму слову
