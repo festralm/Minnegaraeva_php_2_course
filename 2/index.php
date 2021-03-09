@@ -38,12 +38,13 @@
         foreach ($generator as $val) {
             $res .= $val;
         }
-        echo $generator->getReturn().'<br>';
-        return $res;
+        return [$res, $generator->getReturn()];
     }
 
     echo "$input_string <br>";
-    echo process($input_string);
+    $res = process($input_string);
+    echo $res[0]."<br>";
+    echo $res[1];
     ?>
 <?php else:?>
     <form action="<?php __FILE__ ?>">
