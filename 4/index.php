@@ -19,21 +19,32 @@
         $array = explode(" ", $str);
 
         $weight = end($array);
-        $text = substr($str, 0, - (strlen($weight) + 1));
-        $data[$i]["text"] = $text;
-
         $weight_int = intval($weight);
-        $data[$i]["weight"] = $weight_int;
+        $weight_sum += $weight_int;
 
-        $data[$i]["probability"] = 1.1;
+        $text = substr($str, 0, - (strlen($weight) + 1));
         $string_probability[$text] = 0;
 
-        $weight_sum += $weight_int;
-        $i++;
-    };
+        $string_exists = false;
+        for ($j = 0; $j < count($data); $j++) {
+            if ($data[$j]["text"] == $text) {
+                $data[$j]["weight"] +=  $weight_int;
+                $i--;
+                $string_exists = true;
+                break;
+            }
+        }
+        if (!$string_exists) {
+            $data[$i]["text"] = $text;
 
+            $data[$i]["weight"] = $weight_int;
+
+            $data[$i]["probability"] = 0;
+        }
+        $i++;
+    }
     for ($i = 0; $i < count($data); $i++) {
-        $probability = round($data[$i]["weight"] / $weight_sum, 2);
+        $probability = $data[$i]["weight"] / $weight_sum;
         $data[$i]["probability"] = $probability;
     }
     $result = [
