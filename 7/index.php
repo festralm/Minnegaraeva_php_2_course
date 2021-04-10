@@ -19,11 +19,13 @@
             echo ($matches[0][1] / $matches[0][0] * 100) . "%<br>";
         }
         if (isset($_REQUEST["tracert"])) {
-            exec("tracert $ip", $resp, $code);
+            $str = exec("tracert -d $ip", $resp, $code);
             for ($i = 3; $i < count($resp) - 2; $i++) {
                 $string = sapi_windows_cp_conv(sapi_windows_cp_get('oem'), 65001, $resp[$i])."<br>";
                 preg_match("/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/", $string, $matches);
-                echo $matches[0]." ";
+                if (sizeof($matches) > 0) {
+                    echo $matches[0] . " ";
+                }
             }
         }
     } else {
