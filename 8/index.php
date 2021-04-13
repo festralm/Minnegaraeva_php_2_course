@@ -27,12 +27,18 @@
 <?php if (isset($_REQUEST["button"])):
     date_default_timezone_set("Europe/Moscow");
     $month = $_REQUEST["month"];
+    $now = new DateTime();
     $date = new DateTime($month);
     $step = new DateInterval('P1D');
     $end = cal_days_in_month(CAL_GREGORIAN, $date->format("m"), $date->format("Y")) - 1;
     $period = new DatePeriod($date, $step, $end);
 
     $calendar = [];
+    $today = 0;
+    if ($date->format("Y-m") == $now->format("Y-m")) {
+        $today = $now->format("d");
+    }
+    echo $today;
 
     $i = 0;
     foreach ($period as $day) {
@@ -53,6 +59,7 @@
     echo "<div class='calendar'>";
     echo "<h3>".strftime("%B %Y", $date->getTimestamp())."</h3>";
     echo '<div class="row">';
+
     for ($i = 0; $i < 7; $i++) {
         if ($i > 4) {
             echo '<span style="color: red; ">';
@@ -64,6 +71,7 @@
         $time += 24 * 60 * 60;
     }
     echo '</div>';
+
     for ($j = 0; $j < sizeof($calendar); $j++) {
         $week = $calendar[$j];
         if ($j == 0) {
@@ -79,7 +87,13 @@
                 if ($i > 4) {
                     echo '<span style="color: red; ">';
                 }
-                    echo "$day";
+                if ($today != 0 && $day == $today) {
+                    echo "<b>";
+                }
+                echo "$day";
+                if ($today != 0 && $day == $today) {
+                    echo "</b>";
+                }
                 if ($i > 4) {
                     echo '</span>';
                 }
