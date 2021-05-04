@@ -85,26 +85,13 @@ class Logger implements LoggerInterface
         ];
 
         $lines = file($this->_fileName);
-        $last  = (count($lines) - 1);
-        unset($lines[$last]);
+        $json = join($array=$lines);
 
-        if (count($lines) > 1) {
-            $lastLine           = $lines[($last - 1)];
-            $lines[($last - 1)] = substr(
-                $lastLine,
-                0,
-                (strlen($lastLine) - 1)
-            ).",\n";
-        }
-
+        $log_objects = json_decode($json);
+        $log_objects[] = $res;
         $fp = fopen($this->_fileName, 'w');
-        fwrite($fp, implode('', $lines));
+        fwrite($fp, json_encode($log_objects, JSON_PRETTY_PRINT));
         fclose($fp);
-
-        $file = fopen($this->_fileName, 'a');
-        fwrite($file, json_encode($res, JSON_PRETTY_PRINT)."\n");
-        fwrite($file, ']');
-        fclose($file);
 
     }
 

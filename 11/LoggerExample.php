@@ -11,7 +11,8 @@ use logger\Logger;
 
 class LoggerExample
 {
-    public function run() {
+    public function run()
+    {
         $logger = new Logger();
 
         $str = 'This is log number {num}, {level}';
