@@ -12,16 +12,6 @@ class Logger implements LoggerInterface
 
     private string $_fileName = 'log.txt';
 
-    /**
-     * Logger constructor.
-     */
-    public function __construct()
-    {
-        $file = fopen($this->_fileName, 'a');
-        fwrite($file, "[\n]");
-        fclose($file);
-    }
-
 
     public function emergency($message, array $context=[])
     {
