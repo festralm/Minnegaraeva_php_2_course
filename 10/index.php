@@ -13,10 +13,12 @@
 </head>
 <body>
 <?php
-spl_autoload_register(function ($class_name) {
-    $file = $class_name . '.php';
-    include $file;
-}, false);
+spl_autoload_register(
+    function ($class_name) {
+        $file = $class_name . '.php';
+        include $file;
+    }, false
+);
 
 use dto\User;
 use exception\UsernameAlreadyExistsException;
@@ -43,11 +45,11 @@ try {
     print_exception($e);
 }
 
-try {
+    try {
     $user->get_birthdate("alia");
 } catch (UserNotFoundException $e) {
     print_exception($e);
-} catch (DataNotFoundException $e) {
+   } catch (DataNotFoundException $e) {
     print_exception($e);
 }
 

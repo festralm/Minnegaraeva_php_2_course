@@ -1,0 +1,47 @@
+[
+{
+    "type": "emergency",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 1, emergency"
+},
+{
+    "type": "alert",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 2, alert"
+},
+{
+    "type": "critical",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 3, critical"
+},
+{
+    "type": "error",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 4, error"
+},
+{
+    "type": "warning",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 5, warning"
+},
+{
+    "type": "notice",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 6, notice"
+},
+{
+    "type": "info",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 7, info"
+},
+{
+    "type": "debug",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 8, debug"
+},
+{
+    "type": "debug",
+    "datetime": "04.05.2021 23:39:22",
+    "contents": "This is log number 9, debug"
+}
+]
