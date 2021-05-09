@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Календарь с перебором</title>
+    <title>Задание 8</title>
     <style>
         .column {
             float: left;

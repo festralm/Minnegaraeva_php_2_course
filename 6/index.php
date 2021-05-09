@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Перекодировка файла</title>
+    <title>Задание 6</title>
 </head>
 <body>
 <?php

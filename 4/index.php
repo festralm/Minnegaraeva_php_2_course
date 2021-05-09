@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Нестандартная сортировка</title>
+    <title>Задание 4</title>
 </head>
 <body>
 <?php if (isset($_REQUEST["button"])):

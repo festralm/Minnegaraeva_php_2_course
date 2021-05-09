@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Сетевые утилиты</title>
+    <title>Задание 7</title>
 </head>
 <body>
 <?php if (isset($_REQUEST["button"])):

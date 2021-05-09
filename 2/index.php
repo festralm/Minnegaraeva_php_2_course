@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Brainfuck</title>
+    <title>Задание 2</title>
 </head>
 <body>
 <?php if (isset($_REQUEST["button"])):
