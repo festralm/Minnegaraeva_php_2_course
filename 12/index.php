@@ -7,27 +7,25 @@
 <body>
 <?php
 if (!isset($_REQUEST["button"])):?>
-<form action="<?php __FILE__ ?>">
-    <?php if (isset($_COOKIE['PHPSESSID']) && isset($_COOKIE['old_value'])):?>
-    <h4>Введите значение, которые вы вводили в прошлый раз</h4>
-    <?php endif; ?>
-    <input name="string" placeholder="Введите строку">
-    <input name="button" type="submit" value="Выполнить">
-</form>
+    <form action="<?php __FILE__ ?>">
+        <?php if (isset($_COOKIE['PHPSESSID']) && isset($_COOKIE['old_value'])):?>
+            <input name="string" placeholder="Введите строку" value="<?php echo $_COOKIE['old_value']?>">
+        <?php else: ?>
+            <input name="string" placeholder="Введите строку" >
+        <?php endif; ?>
+        <input name="button" type="submit" value="Выполнить">
+    </form>
 <?php else:
-    if (isset($_COOKIE['PHPSESSID']) && isset($_COOKIE['old_value'])) {
-        if ($_COOKIE['old_value'] === $_REQUEST['string']) {
-            header("Location: http://localhost/2?button=" . $_REQUEST['button'] . "&string=" . $_REQUEST['string']);
-        } else {
-            unset($_REQUEST["button"]);
-            unset($_REQUEST["string"]);
-            header("Location: http://localhost/12");
-        }
-    } else {
-        session_start();
-        setcookie("old_value", $_REQUEST['string']);
-        header("Location: http://localhost/2?button=" . $_REQUEST['button'] . "&string=" . $_REQUEST['string']);
-    }
+    session_start();
+    setcookie("old_value", $_REQUEST['string']);
+    $opts = [
+        'http' => [
+            'method' => 'GET'
+        ]
+    ];
+    $context = stream_context_create($opts);
+    echo file_get_contents('http://localhost:8080/2?string='.$_REQUEST['string'].'&button='.urlencode($_REQUEST['button']),
+        true, $context);
     ?>
 <?php endif;?>
 </body>

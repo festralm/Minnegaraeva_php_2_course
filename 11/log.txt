@@ -133,5 +133,95 @@
         "type": "debug",
         "datetime": "09.05.2021 16:13:07",
         "contents": "This is log number 9, debug"
+    },
+    {
+        "type": "emergency",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 1, emergency"
+    },
+    {
+        "type": "alert",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 2, alert"
+    },
+    {
+        "type": "critical",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 3, critical"
+    },
+    {
+        "type": "error",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 4, error"
+    },
+    {
+        "type": "warning",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 5, warning"
+    },
+    {
+        "type": "notice",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 6, notice"
+    },
+    {
+        "type": "info",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 7, info"
+    },
+    {
+        "type": "debug",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 8, debug"
+    },
+    {
+        "type": "debug",
+        "datetime": "11.05.2021 20:28:20",
+        "contents": "This is log number 9, debug"
+    },
+    {
+        "type": "emergency",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 1, emergency"
+    },
+    {
+        "type": "alert",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 2, alert"
+    },
+    {
+        "type": "critical",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 3, critical"
+    },
+    {
+        "type": "error",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 4, error"
+    },
+    {
+        "type": "warning",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 5, warning"
+    },
+    {
+        "type": "notice",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 6, notice"
+    },
+    {
+        "type": "info",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 7, info"
+    },
+    {
+        "type": "debug",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 8, debug"
+    },
+    {
+        "type": "debug",
+        "datetime": "11.05.2021 20:28:22",
+        "contents": "This is log number 9, debug"
     }
 ]
