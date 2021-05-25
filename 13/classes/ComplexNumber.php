@@ -1,6 +1,8 @@
 <?php
 namespace classes;
 
+use exception\UserNotFoundException;
+
 class ComplexNumber
 {
 

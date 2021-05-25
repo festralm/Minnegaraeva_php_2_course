@@ -14,7 +14,18 @@
 <body>
 <?php
 spl_autoload_register(
-    function ($class_name) {
+/**
+ * Autoloader
+ *
+ * Autoloads classes
+ *
+ * @author Minnegaraeva Alia <alia01minn@gmail.com>
+ * @copyright Copyright (c) 2021, Minnegaraeva Alia
+ * @version 1.0
+ * @param string $class_name name of class to autoload
+ * @return void
+ */
+    function ($class_name):void {
         $file = $class_name . '.php';
         include $file;
     }, false
@@ -27,6 +38,7 @@ use exception\UserNotFoundException;
 use exception\WrongPasswordException;
 use exception\DataNotFoundException;
 
+/** @var User $user */
 $user = new User();
 
 try {
@@ -45,11 +57,11 @@ try {
     print_exception($e);
 }
 
-    try {
+try {
     $user->get_birthdate("alia");
 } catch (UserNotFoundException $e) {
     print_exception($e);
-   } catch (DataNotFoundException $e) {
+} catch (DataNotFoundException $e) {
     print_exception($e);
 }
 
@@ -62,10 +74,21 @@ try {
 }
 
 
-function print_exception($exception)
+/**
+ * Method print_exception
+ *
+ * Prints thrown exception
+ *
+ * @author Minnegaraeva Alia <alia01minn@gmail.com>
+ * @copyright Copyright (c) 2021, Minnegaraeva Alia
+ * @version 1.0
+ * @param Exception $exception
+ * @return void
+ */
+function print_exception(Exception $exception):void
 {
     preg_match("/\\\\([A-Za-z]+)$/", get_class($exception), $array);
-    echo "Возникла ошибка <span class='exception'>$array[1]</span> (";
+    echo "Возникла ошибка <span classes='exception'>$array[1]</span> (";
     echo $exception->getMessage().")<br>";
 }?>
 </body>

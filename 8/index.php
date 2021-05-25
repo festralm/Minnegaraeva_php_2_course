@@ -56,15 +56,15 @@
     }
 
     $time = time();
-    echo "<div class='calendar'>";
+    echo "<div classes='calendar'>";
     echo "<h3>".strftime("%B %Y", $date->getTimestamp())."</h3>";
-    echo '<div class="row">';
+    echo '<div classes="row">';
 
     for ($i = 0; $i < 7; $i++) {
         if ($i > 4) {
             echo '<span style="color: red; ">';
         }
-        echo '<div class="column">' . strftime("%a", $time). '</div>';
+        echo '<div classes="column">' . strftime("%a", $time). '</div>';
         if ($i > 4) {
             echo '</span>';
         }
@@ -75,13 +75,13 @@
     for ($j = 0; $j < sizeof($calendar); $j++) {
         $week = $calendar[$j];
         if ($j == 0) {
-            echo "<div class='row first'>";
+            echo "<div classes='row first'>";
 
         } else {
-            echo "<div class='row'>";
+            echo "<div classes='row'>";
         }
         for ($i = 0; $i < sizeof($week); $i++) {
-            echo "<div class='column'>";
+            echo "<div classes='column'>";
             $day = $week[$i];
             if ($day != 0) {
                 if ($i > 4) {
